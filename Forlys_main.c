@@ -18,3 +18,6 @@ int main(void)
     }
 }
 
+void turnOnFrontLight(int FrontLight);
+
+void turnOffFrontLight(int FrontLight);
