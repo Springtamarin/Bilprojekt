@@ -7,6 +7,31 @@
 
 #include <avr/io.h>
 
+turnOnFrontlight(int frontLight)
+{
+	
+}
+
+turnOffFrontLight (int frontLight)
+{
+	
+}
+
+turnOnBackLight(int rearLight)
+{
+	
+}
+
+turnOffBackLight(int rearLight)
+{
+	
+}
+
+setIntensity(int intensity)
+{
+	
+}
+
 
 int main(void)
 {
