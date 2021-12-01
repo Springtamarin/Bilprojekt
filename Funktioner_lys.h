@@ -6,4 +6,3 @@
  *  Author: sandr
  */ 
 
-int main(void);
