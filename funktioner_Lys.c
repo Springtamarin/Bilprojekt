@@ -17,9 +17,11 @@ PORTE &= 0b00000000;
 //Udkast
 TCCR3A = 0b10000011; // Timer 3 sættes til mode 3 (PWM 10-bit) + top på 0x03FF dvs 1023 + ikke fast PWM
 					 // Clear OC3B/C when up-counting, set OC3B/C when down-counting
-					 // OC3A styrer PE ben3
+					 // OCR3A styrer PE ben3
 TCCR3B = 0b00000001; // Clock prescaler sættes til 1 = no prescaling, så lyset blinker så hurtigt, at vi ikke kan se det
 
+//Er OCR3A korrekt?
+OCR3A = 1023;
 
 
 turnOnFrontlight(int frontLight)
