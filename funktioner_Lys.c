@@ -16,15 +16,12 @@ PORTE = 0;
 // Timer 3 sættes til mode 3 (PWM 10-bit)
 // Top på 0x03FF dvs 1023
 // Clock prescaler sættes til 1 = no prescaling
-// OC3A styrer Pin B og C - Ikke fast PWM
-// clear OC3B/C when up-counting, set OC3B/C when down-counting
+// Hvad styer OC3B? - ikke fast PWM //HENNING??
+// Clear OC3B/C when up-counting, set OC3B/C when down-counting
 
 
-TCCR3B = 0b00001000;
-
-
-TCCR1A = 0b10100011;  //TIL HENNING??
-TCCR1B = 0b00000001; 
+TCCR3A = 0b10100011;  //TIL HENNING??
+TCCR3B = 0b00000001; 
 
 turnOnFrontlight(int frontLight)
 {
