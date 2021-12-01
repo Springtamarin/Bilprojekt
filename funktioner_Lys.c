@@ -20,9 +20,11 @@ PORTE = 0;
 // clear OC3B/C when up-counting, set OC3B/C when down-counting
 
 
-TCCR3B = 
-TCCR3B = 0b10100011;  //TIL HENNING??
-TCCR3C = 0b00000001; 
+TCCR3B = 0b00001000;
+
+
+TCCR1A = 0b10100011;  //TIL HENNING??
+TCCR1B = 0b00000001; 
 
 turnOnFrontlight(int frontLight)
 {
