@@ -6,7 +6,6 @@
  *  Author: sandr
  */ 
 
-
 //funktioner til forlys
 void turnOnFrontlight(int frontLight);
 void turnOffFrontLight (int frontLight);
