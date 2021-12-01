@@ -8,6 +8,8 @@
 #include <avr/io.h>
 #include "Funktioner_lys.h"
 
+//Forlys:
+
 //Sæt alle PORTE's ben3 til at være udgange
 DDRE |= 0b00010000;
 
@@ -23,6 +25,7 @@ TCCR3B = 0b00000001; // Clock prescaler sættes til 1 = no prescaling, så lyset b
 //OSCR3A er sat til fuldt lys
 OCR3A = 1023;
 
+//Baglys:
 
 turnOnFrontlight(int frontLight)
 {
