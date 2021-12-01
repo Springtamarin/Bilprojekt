@@ -19,6 +19,8 @@ PORTE = 0;
 // OC3A styrer Pin B og C - Ikke fast PWM
 // clear OC3B/C when up-counting, set OC3B/C when down-counting
 
+
+TCCR3B = 
 TCCR3B = 0b10100011;  //TIL HENNING??
 TCCR3C = 0b00000001; 
 
@@ -47,12 +49,4 @@ setIntensity(int intensity)
 	
 }
 
-
-int main(void)
-{
-    /* Replace with your application code */
-    while (1) 
-    {
-    }
-}
 
