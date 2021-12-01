@@ -6,3 +6,15 @@
  *  Author: sandr
  */ 
 
+
+//funktioner til forlys
+void turnOnFrontlight(int frontLight);
+void turnOffFrontLight (int frontLight);
+
+//funktioner til baglys
+void turnOnBackLight(int rearLight);
+void turnOffBackLight(int rearLight);
+void setIntensity(int intensity);
+
+
+
