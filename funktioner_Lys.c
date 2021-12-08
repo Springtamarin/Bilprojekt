@@ -27,7 +27,7 @@ OCR3A = 1023;
 
 //Baglys:
 
-//Ved baglys kan vi bare bruge et andet ben 4.
+//Ved baglys kan vi bare bruge et andet ben fx 4.
 
 turnOnFrontlight(int frontLight)
 {
