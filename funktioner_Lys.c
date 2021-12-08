@@ -27,6 +27,7 @@ OCR3A = 1023;
 
 //Baglys:
 
+<<<<<<< HEAD
 //Sæt alle PORTE's ben4 til at være udgange
 DDRE |= 0b00001000;
 
@@ -46,6 +47,9 @@ OCR3B = 1023;
 OCR3B = 511;
 
 
+=======
+//Ved baglys kan vi bare bruge et andet ben fx 4.
+>>>>>>> 218cfea34595abed33a69affec4350f892a21dfc
 
 turnOnFrontlight(int frontLight)
 {
