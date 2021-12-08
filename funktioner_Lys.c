@@ -8,62 +8,56 @@
 #include <avr/io.h>
 #include "Funktioner_lys.h"
 
-//Forlys
-//Sæt alle PORTE's ben3 til at være udgange
-DDRE |= 0b00010000;
-// Clear
-PORTE &= 0b11101111;
-
-//Baglys:
-//Sæt alle PORTE's ben4 til at være udgange
-DDRE |= 0b00001000;
-// Clear
-PORTE &= 0b11110111;
-
-//Udkast
-TCCR3A = 0b10100011; // Timer 3 sættes til mode 3 (PWM 10-bit) + top på 0x03FF dvs 1023 + ikke fast PWM
-					 // Clear OC3A when up-counting, set OC3A when down-counting
-					 // Clear OC3B when up-counting, set OC3B when down-counting
-TCCR3B = 0b00000001; // Clock prescaler sættes til 1 = no prescaling, så lyset blinker så hurtigt, at vi ikke kan se det blinker
-
-//A-system til forlys. OSCR3A styrer PE ben3, og er sat til fuldt lys
-OCR3A = 1023;
-
-
-//B system til baglys. OSCR3B styrer PE ben4 er sat til fuldt lys
-OCR3B = 1023;
-
-//OSCR3B er sat til 50% duty cycle
-OCR3B = 511;
-
-
-
-turnOnFrontlight(int frontLight)
+void Init_lys (void)
 {
-	if (frontLight==1)
-	{
-		xxx=
-	}
+	//Forlys
+	//Sæt alle PORTE's ben3 til at være udgange
+	DDRE |= 0b00010000;
+	// Clear
+	PORTE &= 0b11101111;
+
+	//Baglys:
+	//Sæt alle PORTE's ben4 til at være udgange
+	DDRE |= 0b00001000;
+	// Clear
+	PORTE &= 0b11110111;
+
+	//Udkast
+	TCCR3A = 0b10100011; // Timer 3 sættes til mode 3 (PWM 10-bit) + top på 0x03FF dvs 1023 + ikke fast PWM
+	// Clear OC3A when up-counting, set OC3A when down-counting
+	// Clear OC3B when up-counting, set OC3B when down-counting
+	TCCR3B = 0b00000001; // Clock prescaler sættes til 1 = no prescaling, så lyset blinker så hurtigt, at vi ikke kan se det blinker
+
 }
 
-turnOffFrontLight (int frontLight)
+void turnOnFrontlight(void)
 {
-	
+		//A-system til forlys. OSCR3A styrer PE ben3, og er sat til fuldt lys
+		OCR3A = 1023;
 }
 
-turnOnBackLight(int rearLight)
+void turnOffFrontLight (void)
 {
-	
+		OCR3A = 0;
 }
 
-turnOffBackLight(int rearLight)
+void turnOnBackLight_Alm(void)
 {
-	
+	//B system til baglys. OSCR3B styrer PE ben4 er sat til fuldt lys
+	OCR3B = 1023;
 }
 
-setIntensity(int intensity)
+void turnOnBackLight_Stop(void)
 {
-	
+	//OSCR3B er sat til 50% duty cycle
+	OCR3B = 511;
 }
+
+void turnOffBackLight(void)
+{
+		OCR3B = 0; 
+}
+
+
 
 
