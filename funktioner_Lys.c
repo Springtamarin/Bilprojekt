@@ -44,8 +44,8 @@ void turnOffFrontLight (void)
 
 void turnOnBackLight_Alm(void)
 {
-	//OSCR3B er sat til 30% duty cycle
-	OCR3B = 306;
+	//OSCR3B er sat til 15% duty cycle
+	OCR3B = 155;
 
 }
 
