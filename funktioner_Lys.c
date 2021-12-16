@@ -12,7 +12,7 @@ void Init_lys (void)
 {
 	//Forlys
 	//Sæt alle PORTE's ben3 til at være udgange
-	DDRE |= 0b00010000;
+	DDRE |= ~0b00010000;
 	// Clear
 	PORTE &= 0b11101111;
 
