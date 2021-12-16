@@ -32,8 +32,8 @@ void Init_lys (void)
 
 void turnOnFrontlight(void)
 {
-		//A-system til forlys. OSCR3A styrer PE ben3, og er sat til fuldt lys
-		OCR3A = 1023;
+		//A-system til forlys. OSCR3A styrer PE ben3, og er sat til 90% lys (0,9*1023)
+		OCR3A = 920;
 }
 
 void turnOffFrontLight (void)
@@ -43,14 +43,15 @@ void turnOffFrontLight (void)
 
 void turnOnBackLight_Alm(void)
 {
-	//B system til baglys. OSCR3B styrer PE ben4 er sat til fuldt lys
-	OCR3B = 1023;
+	//OSCR3B er sat til 30% duty cycle
+	OCR3B = 306;
+
 }
 
 void turnOnBackLight_Stop(void)
 {
-	//OSCR3B er sat til 50% duty cycle
-	OCR3B = 511;
+	//B system til baglys. OSCR3B styrer PE ben4 er sat til 90% lys (0,9*1023)
+	OCR3B = 920;
 }
 
 void turnOffBackLight(void)
