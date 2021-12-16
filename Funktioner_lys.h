@@ -12,9 +12,9 @@ void turnOnFrontlight(void);
 void turnOffFrontLight (void);
 
 //funktioner til baglys
-void turnOnBackLight(void);
+void turnOnBackLight_Alm(void);
+void turnOnBackLight_Stop(void);
 void turnOffBackLight(void);
-void setIntensity(void);
 
 
 
