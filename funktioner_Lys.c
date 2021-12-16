@@ -7,6 +7,7 @@
 
 #include <avr/io.h>
 #include "Funktioner_lys.h"
+#define F_cpu 16000000
 
 void Init_lys (void)
 {
