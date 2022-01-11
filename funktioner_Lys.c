@@ -6,8 +6,7 @@
  */ 
 
 #include <avr/io.h>
-#include "Funktioner_lys.h"
-#define F_cpu 16000000
+#define F_CPU 16000000
 #include <util/delay.h>
 
 void Init_lys (void)
@@ -67,7 +66,7 @@ int main(void)
 {
 	Init_lys();
 	turnOnFrontlight();
-	_delay_us(1000);	turnOffFrontLight();
+	_delay_ms(5000);	turnOffFrontLight();
 	
 	while (1)
 	{
