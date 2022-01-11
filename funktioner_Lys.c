@@ -8,6 +8,7 @@
 #include <avr/io.h>
 #include "Funktioner_lys.h"
 #define F_cpu 16000000
+#include <util/delay.h>
 
 void Init_lys (void)
 {
@@ -57,6 +58,23 @@ void turnOnBackLight_Stop(void)
 void turnOffBackLight(void)
 {
 	OCR3B = 0; 
+}
+
+
+
+//Test i main
+int main(void)
+{
+	Init_lys();
+	turnOnFrontlight();
+	_delay_us(1000);	turnOffFrontLight();
+	
+	while (1)
+	{
+	}
+	
+	
+	
 }
 
 
