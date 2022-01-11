@@ -1,9 +1,9 @@
 /*
- * Forlys.c
- *
- * Created: 30-11-2021 09:13:11
- * Author : sandr
- */ 
+* Forlys.c
+*
+* Created: 30-11-2021 09:13:11
+* Author : sandr
+*/
 
 #include <avr/io.h>
 #define F_CPU 16000000
@@ -19,7 +19,7 @@ void Init_lys (void)
 
 	//Baglys:
 	//Sæt alle PORTE's ben4 til at være udgange
-	DDRE |= 0b00001000;
+	DDRE |= ~0b00001000;
 	// Clear
 	PORTE &= 0b11110111;
 
@@ -32,13 +32,13 @@ void Init_lys (void)
 
 void turnOnFrontlight(void)
 {
-		//A-system til forlys. OSCR3A styrer PE ben3, og er sat til 90% lys (0,9*1023)
-		OCR3A = 920;
+	//A-system til forlys. OSCR3A styrer PE ben3, og er sat til 90% lys (0,9*1023)
+	OCR3A = 920;
 }
 
 void turnOffFrontLight (void)
 {
-		OCR3A = 0;
+	OCR3A = 0;
 }
 
 void turnOnBackLight_Alm(void)
@@ -56,7 +56,7 @@ void turnOnBackLight_Stop(void)
 
 void turnOffBackLight(void)
 {
-	OCR3B = 0; 
+	OCR3B = 0;
 }
 
 
@@ -65,6 +65,13 @@ void turnOffBackLight(void)
 int main(void)
 {
 	Init_lys();
+	turnOnFrontlight();
+	_delay_ms(5000);	turnOffFrontLight();
+	turnOnBackLight_Alm();
+	_delay_ms(2000);
+	turnOnBackLight_Stop();
+	_delay_ms(5000);
+	turnOffBackLight();
 	turnOnFrontlight();
 	_delay_ms(5000);	turnOffFrontLight();
 	
