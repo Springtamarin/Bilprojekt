@@ -23,7 +23,6 @@ void Init_lys (void)
 	// Clear
 	PORTE &= 0b11110111;
 
-	//Udkast
 	TCCR3A = 0b10100011; // Timer 3 sættes til mode 3 (PWM 10-bit) + top på 0x03FF dvs 1023 + ikke fast PWM
 	// Clear OC3A when up-counting, set OC3A when down-counting
 	// Clear OC3B when up-counting, set OC3B when down-counting
@@ -44,7 +43,7 @@ void turnOffFrontLight (void)
 
 void turnOnBackLight_Alm(void)
 {
-	//OSCR3B er sat til 15% duty cycle
+	//B-system til baglys. OSCR3B styrer PE ben4, og er sat til 15% duty cycle
 	OCR3B = 155;
 
 }
